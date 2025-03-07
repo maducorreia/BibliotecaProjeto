@@ -17,8 +17,8 @@ public class Main{
        //menu
        while (true) {
         try {
-            System.out.println("1 - Alugar livro");
-            System.out.println("2 - Devolver livro");
+            System.out.println("1 - Alugar item");
+            System.out.println("2 - Devolver item");
             System.out.println("3 - Sair");
             System.out.println("Escolha uma opção: ");
             int opcao = sc.nextInt();
