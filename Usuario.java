@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Usuario extends Pessoa {
     private Livro livroAlugado;
+    private List<Item> itensAlugados = new ArrayList<>();
 
     public Usuario(String nome) {
         super(nome);
@@ -12,6 +16,20 @@ public class Usuario extends Pessoa {
 
     public void setLivroAlugado(Livro livroAlugado) {
         this.livroAlugado = livroAlugado;
+    }
+
+    public void alugarItem(Item item) {
+        itensAlugados.add(item);
+        System.out.println(getNome() + " alugou o item: " + item.getTitulo());
+    }
+
+    public void devolverItem() {
+        if (!itensAlugados.isEmpty()) {
+            itensAlugados.remove(itensAlugados.size() - 1);
+            System.out.println("Item devolvido com sucesso!");
+        } else {
+            System.out.println("Nenhum item para devolver!");
+        }
     }
 
     public void alugarLivro(Livro livro) {
