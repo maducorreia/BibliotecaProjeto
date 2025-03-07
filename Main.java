@@ -30,14 +30,14 @@ public class Main{
                 Usuario usuario = biblioteca.buscarUsuario(nomeUsuario);
 
                 if (usuario != null) {
-                    System.out.println("Digite o nome do livro: ");
-                    String tituloLivro = sc.nextLine();
-                    Livro livro = biblioteca.buscarLivro(tituloLivro);
+                    System.out.println("Digite o nome do item: ");
+                    String tituloItem = sc.nextLine();
+                    Item item = biblioteca.buscarItem(tituloItem);
 
-                    if (livro != null) {
-                        usuario.alugarLivro(livro);
+                    if (item != null) {
+                        usuario.alugarItem(item);
                     } else {
-                        System.out.println("Livro indisponível!");
+                        System.out.println("Item indisponível!");
                     }
                 } else {
                     System.out.println("Usuário não encontrado!");
@@ -48,7 +48,7 @@ public class Main{
                 Usuario usuario = biblioteca.buscarUsuario(nomeUsuario);
 
                 if (usuario != null) {
-                    usuario.devolverLivro();
+                    usuario.devolverItem();
                 } else {
                     System.out.println("Usuário não encontrado!");
                 }
