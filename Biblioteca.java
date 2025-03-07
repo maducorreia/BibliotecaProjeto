@@ -11,6 +11,18 @@ public class Biblioteca {
         livros = new ArrayList<Livro>();
     }
 
+    public Item buscarItem(String titulo) {
+        ArrayList<Item> itens = new ArrayList<Item>();
+        itens.addAll(livros);
+        itens.addAll(revistas);
+        for (Item item : itens) {
+            if (item.getTitulo().equalsIgnoreCase(titulo)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
